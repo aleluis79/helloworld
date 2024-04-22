@@ -1,1 +1,56 @@
+$sky-palette: (
+    50 : #f3f8fc,
+    100 : #e2eef8,
+    200 : #cfe2f4,
+    300 : #bcd6ef,
+    400 : #adceeb,
+    500 : #9fc5e8,
+    600 : #97bfe5,
+    700 : #8db8e2,
+    800 : #83b0de,
+    900 : #72a3d8,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #eef6ff,
+    A700 : #d4e9ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$my-primary: mat.define-palette($sky-palette, 500);
+$my-accent: mat.define-palette($sky-palette, A200, A100, A400);
+
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+ ),
+ typography: mat.define-typography-config(),
+ density: 0,
+));
+
+@include mat.all-component-themes($my-theme);
+
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0px; font-family: Roboto, "Helvetica Neue", sans-serif; }
